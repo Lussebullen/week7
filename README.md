@@ -5,3 +5,5 @@ There are two containers starting simultaneously using the settings in the compo
 ** 2. The pgadmin container **
 
 Run "docker compose up -d" to start the containers
+
+test
