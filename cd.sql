@@ -26,5 +26,22 @@ SELECT
     END AS cost
 FROM cd.facilities;
 
---8. Working with dates
-SELECT * from cd.members WHERE joindate >= '2012-01-01 00:00:00'
+-- 8. Working with dates
+SELECT * FROM cd.members WHERE joindate >= '2012-01-01 00:00:00';
+
+-- 9. Removing duplicates, and ordering results
+SELECT DISTINCT surname FROM cd.members ORDER BY surname LIMIT 10;
+
+-- 10. Combining results from multiple queries
+SELECT surname FROM cd.members
+UNION
+SELECT name FROM cd.facilities;
+
+-- 11. Simple aggregation
+SELECT MAX(joindate) AS latest
+	FROM cd.members;
+
+-- 12. More aggregation
+SELECT firstname, surname, joindate
+	FROM cd.members
+	WHERE joindate = (SELECT MAX(joindate) FROM cd.members);
