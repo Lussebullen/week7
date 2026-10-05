@@ -1,0 +1,1 @@
+adding SQL querries to create a table and insert data into it.
