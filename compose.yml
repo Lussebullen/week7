@@ -26,4 +26,6 @@ services:
 
 volumes:
   pgdata:
+    external: true
+    name: docker_pgdata
   pgadmin_data:
