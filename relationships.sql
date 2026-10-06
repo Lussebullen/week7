@@ -108,6 +108,10 @@ FROM Students
 JOIN Student_Courses ON Students.id = Student_Courses.student_id
 JOIN Courses ON Courses.id = Student_Courses.course_id;
 
+-- Constraints violation (on purpose)
+INSERT INTO Student_Courses (student_id, course_id) VALUES (10, 10); -- This will cause a foreign key violation
+-- Message: ERROR:  insert or update on table "student_courses" violates foreign key constraint "student_courses_student_id_fkey"
+
 -- Drop tables (order is important due to foreign key constraints)
 drop table books
 drop table authors
